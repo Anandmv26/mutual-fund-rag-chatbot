@@ -1,0 +1,12 @@
+{
+    "name": "mutual-fund-rag-chatbot-root",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "build": "cd Phase4_Frontend/frontend && npm install && npm run build",
+        "install": "cd Phase4_Frontend/frontend && npm install"
+    }
+}

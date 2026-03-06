@@ -12,20 +12,9 @@
     ],
     "functions": {
         "api/index.py": {
-            "runtime": "vercel-python@3.10"
+            "runtime": "vercel-python@3.10",
+            "memory": 1024,
+            "maxDuration": 30
         }
-    },
-    "builds": [
-        {
-            "src": "Phase4_Frontend/frontend/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
-        },
-        {
-            "src": "api/index.py",
-            "use": "@vercel/python"
-        }
-    ]
+    }
 }
