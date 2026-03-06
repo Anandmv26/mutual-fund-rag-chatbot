@@ -4,5 +4,4 @@ pydantic
 groq
 python-dotenv
 chromadb
-sentence-transformers
-torch
+fastembed

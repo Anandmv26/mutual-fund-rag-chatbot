@@ -32,9 +32,26 @@ class Retriever:
         collection_name: str = COLLECTION_NAME,
     ):
         self.client = chromadb.PersistentClient(path=persist_dir)
-        self.ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name=EMBEDDING_MODEL
-        )
+        
+        # Use fastembed for query embedding to save 7GB+ of space on Vercel
+        try:
+            from fastembed import TextEmbedding
+            # This is a dummy EF that satisfies Chroma's interface but uses our engine
+            class FastEmbedEF:
+                def __init__(self):
+                    self.model = TextEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+                def __call__(self, input: List[str]) -> List[List[float]]:
+                    return [list(vec) for vec in self.model.embed(input)]
+            
+            self.ef = FastEmbedEF()
+            print("🚀 Using FastEmbed for search query (Vercel Optimized)")
+        except ImportError:
+            # Fallback for local dev if fastembed isn't installed
+            print("⚠️ fastembed not found, falling back to SentenceTransformer (Default)")
+            self.ef = embedding_functions.SentenceTransformerEmbeddingFunction(
+                model_name=EMBEDDING_MODEL
+            )
+
         self.collection = self.client.get_collection(
             name=collection_name,
             embedding_function=self.ef,
