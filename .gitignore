@@ -21,7 +21,6 @@ build/
 npm-debug.log*
 
 # Database & Data
-data/chroma/
 *.sqlite3
 
 # OS generated files
