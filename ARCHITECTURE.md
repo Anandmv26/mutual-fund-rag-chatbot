@@ -7,7 +7,7 @@ This document outlines the end-to-end architecture for a production-ready RAG (R
 ## 🎯 Project Overview
 - **Domain**: Mutual funds (sourced from `https://www.indmoney.com/mutual-funds`).
 - **Core Technology Stack**:
-  - **Backend**: Python (FastAPI), Groq API (`llama3-70b-8192`), Playwright, ChromaDB, Sentence-Transformers.
+  - **Backend**: Python (FastAPI), Groq API (`llama-3.3-70b-versatile`), Playwright, ChromaDB, Sentence-Transformers.
   - **Frontend**: React (with smooth aesthetics and mobile responsiveness).
   - **CI/CD & Cron**: GitHub Actions.
   - **Containerization**: Docker & Docker Compose.
@@ -96,7 +96,7 @@ This project is designed to be deployed as a **Vercel Monorepo**:
        │
        │ (4. Prompt template + Context chunks)
        ▼
-[ llama3-70b-8192 ] ─── (5. Refined Answer) ───▶
+[ llama-3.3-70b-versatile ] ─── (5. Refined Answer) ───▶
 ```
 
 ---
@@ -230,10 +230,10 @@ root/
 ## 🛠️ Environment Variables (.env)
 | Variable | Description |
 | :--- | :--- |
-| `GROQ_API_KEY` | API key for llama3-70b-8192 |
+| `GROQ_API_KEY` | API key for llama-3.3-70b-versatile |
 | `DATABASE_URL` | Local path or remote ChromaDB endpoint |
 | `SCRAPE_INTERVAL` | Hours between scraper runs |
-| `LLM_MODEL_ID` | Groq model identifier (llama3-70b-8192) |
+| `LLM_MODEL_ID` | Groq model identifier (llama-3.3-70b-versatile) |
 
 ---
 
