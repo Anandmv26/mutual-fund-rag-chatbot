@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/index.py"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/Phase4_Frontend/frontend/dist/$1"
+        }
+    ],
+    "functions": {
+        "api/index.py": {
+            "runtime": "vercel-python@3.10"
+        }
+    },
+    "builds": [
+        {
+            "src": "Phase4_Frontend/frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        },
+        {
+            "src": "api/index.py",
+            "use": "@vercel/python"
+        }
+    ]
+}

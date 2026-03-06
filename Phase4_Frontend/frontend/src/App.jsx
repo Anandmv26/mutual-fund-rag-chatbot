@@ -3,7 +3,7 @@ import axios from 'axios'
 import { WalletCards, Send, User, Bot, Sparkles, Code, Activity, Star, Info, ChevronDown, ChevronUp } from 'lucide-react'
 
 // API endpoint configurable via env
-const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000"
+const API_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? "http://localhost:8000" : "/api")
 
 export default function App() {
     const [messages, setMessages] = useState([
