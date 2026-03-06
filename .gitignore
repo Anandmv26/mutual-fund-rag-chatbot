@@ -1,0 +1,50 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env_old/
+*.egg-info/
+.pytest_cache/
+
+# Node.js
+node_modules/
+dist/
+build/
+npm-debug.log*
+
+# Database & Data
+data/chroma/
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Test outputs
+test_output.txt
+test_output_proc.txt
+test_out.txt
+*.log
+
+# Scripts
+Phase3_Backend_API/api/test.py
+Phase3_Backend_API/api/test_out.txt
+Phase3_Backend_API/api/test_out.txt

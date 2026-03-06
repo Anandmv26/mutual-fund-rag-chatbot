@@ -1,0 +1,46 @@
+name: "Daily Mutual Fund Scraper & Re-indexing"
+
+on:
+  schedule:
+    # Run at 2 AM UTC every day
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Manual trigger for testing
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install playwright chromadb sentence-transformers
+          playwright install chromium --with-deps
+
+      - name: Run Scraper
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd) 
+          python Phase1_Scraping/ingestion/scraper.py
+
+      - name: Process & Update ChromaDB Embeddings
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          python Phase1_Scraping/ingestion/embedder.py --rebuild
+
+      - name: Commit and Push local snapshots and ChromaDB vectors
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/raw/*.json data/chroma/*
+          git commit -m "Auto-update: Daily Scrape Snapshot & Embeddings [$(date +'%Y-%m-%d')]" || exit 0
+          git push

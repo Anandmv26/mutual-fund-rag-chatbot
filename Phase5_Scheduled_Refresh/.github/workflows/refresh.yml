@@ -1,0 +1,44 @@
+name: "Daily Mutual Fund Scraper & Re-indexing"
+
+on:
+  schedule:
+    # Run at 2 AM UTC every day
+    - cron: '0 2 * * *'
+  workflow_dispatch: # Manual trigger for testing
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium --with-deps
+
+      - name: Run Scraper
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python ingestion/scraper.py --mode production
+
+      - name: Update ChromaDB Fragments
+        run: |
+          python ingestion/embedder.py --action update
+
+      - name: Commit and Push local snapshots (optional)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/raw/*.json
+          git commit -m "Auto-update: Daily Scrape Snapshot [$(date +'%Y-%m-%d')]" || exit 0
+          git push
