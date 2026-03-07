@@ -25,22 +25,21 @@ jobs:
           pip install playwright chromadb sentence-transformers
           playwright install chromium --with-deps
 
-      - name: Run Scraper
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      - name: Scrape, Process, and Embed
         run: |
-          export PYTHONPATH=$PYTHONPATH:$(pwd) 
           python Phase1_Scraping/ingestion/scraper.py
+          python Phase1_Scraping/ingestion/processor.py
+          python Phase1_Scraping/ingestion/embedder.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+          DATABASE_PATH: data/chroma
+          RAW_DATA_PATH: data/raw
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
-      - name: Process & Update ChromaDB Embeddings
+      - name: Commit and Push Changes
         run: |
-          export PYTHONPATH=$PYTHONPATH:$(pwd)
-          python Phase1_Scraping/ingestion/embedder.py --rebuild
-
-      - name: Commit and Push local snapshots and ChromaDB vectors
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
           git add data/raw/*.json data/chroma/*
-          git commit -m "Auto-update: Daily Scrape Snapshot & Embeddings [$(date +'%Y-%m-%d')]" || exit 0
-          git push
+          git commit -m "Automated Data Refresh: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push origin main
