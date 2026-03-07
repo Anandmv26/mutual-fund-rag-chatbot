@@ -34,8 +34,8 @@ class Retriever:
         # Vercel Fix: Use absolute Vercel task root and writable /tmp
         if os.environ.get("VERCEL"):
             import shutil
-            # Vercel absolute path to our data
-            source_dir = "/var/task/data/chroma"
+            # Vercel bundles the /api folder; look there
+            source_dir = "/var/task/api/data/chroma"
             tmp_dir = "/tmp/chroma_db"
             
             if not os.path.exists(tmp_dir):
@@ -51,9 +51,12 @@ class Retriever:
                             shutil.copytree(s, d, dirs_exist_ok=True)
                         else:
                             shutil.copy2(s, d)
-                    print("✅ DB migration to /tmp successful.")
                 else:
-                    print(f"⚠️ Warning: Source DB not found in deployment at {source_dir}")
+                    # Fallback for different Vercel structure
+                    print(f"⚠️ Source not at {source_dir}, checking root /data")
+                    alt_source = "/var/task/data/chroma"
+                    if os.path.exists(alt_source):
+                        shutil.copytree(alt_source, tmp_dir, dirs_exist_ok=True)
             
             persist_dir = tmp_dir
 

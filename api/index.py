@@ -8,9 +8,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "Phase3_Backend
 
 # Absolute path correction for local data and model access in serverless env
 # Vercel serverless functions have a read-only filesystem except /tmp
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-os.environ["DATABASE_PATH"] = os.path.join(ROOT_DIR, "data", "chroma")
-os.environ["RAW_DATA_PATH"] = os.path.join(ROOT_DIR, "data", "raw")
+# Absolute path correction for bundled data inside the api/ folder
+API_DIR = os.path.dirname(os.path.abspath(__file__))
+os.environ["DATABASE_PATH"] = os.path.join(API_DIR, "data", "chroma")
+os.environ["RAW_DATA_PATH"] = os.path.join(API_DIR, "data", "raw")
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
 
 # Note: We must ensure ChromaDB and Sentence-Transformers fit in Vercel's 250MB limit.
