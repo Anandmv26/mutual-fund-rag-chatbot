@@ -15,10 +15,11 @@ from typing import List, Dict, Any, Optional
 import chromadb
 from chromadb.utils import embedding_functions
 
-# Shared constants (same as embedder.py)
-CHROMA_DIR = os.path.join(
+# Shared constants
+# Prioritize environment variable (set by index.py on Vercel)
+CHROMA_DIR = os.getenv("DATABASE_PATH", os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "chroma"
-)
+))
 COLLECTION_NAME = "mutual_funds"
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
