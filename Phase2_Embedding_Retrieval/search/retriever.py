@@ -60,7 +60,11 @@ class Retriever:
             # This is a dummy EF that satisfies Chroma's interface but uses our engine
             class FastEmbedEF:
                 def __init__(self):
-                    self.model = TextEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+                    # Set cache_dir to /tmp for Vercel
+                    self.model = TextEmbedding(
+                        model_name="sentence-transformers/all-MiniLM-L6-v2", 
+                        cache_dir="/tmp/fastembed"
+                    )
                 def __call__(self, input: List[str]) -> List[List[float]]:
                     return [list(vec) for vec in self.model.embed(input)]
             
