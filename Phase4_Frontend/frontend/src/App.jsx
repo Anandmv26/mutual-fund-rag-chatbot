@@ -15,13 +15,24 @@ export default function App() {
         }
     ])
     const [suggestions, setSuggestions] = useState([
-        "Best ELSS for tax saving",
-        "Compare Large Cap vs Mid Cap",
-        "Current market outlook"
+        "What is the 3Y return of Quant Small Cap Fund?",
+        "What is the exit load for HDFC Infrastructure Fund?",
+        "Who manages the LIC MF Gold ETF?"
     ])
     const [input, setInput] = useState("")
     const [loading, setLoading] = useState(false)
-    const [supportedFunds, setSupportedFunds] = useState([])
+    const [supportedFunds, setSupportedFunds] = useState([
+        "DSP World Gold Mining Overseas Equity Omni FoF",
+        "LIC MF Gold ETF FOF",
+        "ICICI Prudential BHARAT 22 FOF",
+        "Quant Small Cap Fund",
+        "HDFC Infrastructure Fund",
+        "ICICI Prudential Credit Risk Fund",
+        "Kotak Multi Asset Omni FOF",
+        "Nippon India Multi Asset Allocation Fund",
+        "Edelweiss Aggressive Hybrid Fund",
+        "Mahindra Manulife Aggressive Hybrid Fund"
+    ])
     const [showFunds, setShowFunds] = useState(false)
     const chatEndRef = useRef(null)
 
@@ -33,23 +44,10 @@ export default function App() {
         scrollToBottom()
     }, [messages])
 
-    // Initial load to get trending suggestions and supported funds
+    // Initial load - We no longer fetch suggestions/funds from backend 
+    // to ensure the UI is instant and resilient to serverless cold starts.
     useEffect(() => {
-        axios.get(`${API_URL}/suggestions`)
-            .then(res => {
-                if (res.data && res.data.suggestions) {
-                    setSuggestions(res.data.suggestions)
-                }
-            })
-            .catch(console.error)
-
-        axios.get(`${API_URL}/supported-funds`)
-            .then(res => {
-                if (res.data && res.data.funds) {
-                    setSupportedFunds(res.data.funds)
-                }
-            })
-            .catch(console.error)
+        console.log("🚀 WealthWise AI Frontend Initialized with local assets.")
     }, [])
 
     const sendMessage = async (text) => {
