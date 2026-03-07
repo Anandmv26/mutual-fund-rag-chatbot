@@ -31,24 +31,29 @@ class Retriever:
         persist_dir: str = CHROMA_DIR,
         collection_name: str = COLLECTION_NAME,
     ):
-        # Vercel Fix: Handle read-only filesystem by copying DB to /tmp
+        # Vercel Fix: Use absolute Vercel task root and writable /tmp
         if os.environ.get("VERCEL"):
             import shutil
-            tmp_dir = "/tmp/chroma"
+            # Vercel absolute path to our data
+            source_dir = "/var/task/data/chroma"
+            tmp_dir = "/tmp/chroma_db"
+            
             if not os.path.exists(tmp_dir):
-                print(f"📦 Vercel detected: Migrating DB from {persist_dir} to {tmp_dir}")
+                print(f"📦 Vercel start: Migrating DB from {source_dir} to {tmp_dir}")
                 os.makedirs(tmp_dir, exist_ok=True)
-                # Copy all files from the repo's chroma dir to /tmp
-                if os.path.exists(persist_dir):
-                    for item in os.listdir(persist_dir):
-                        s = os.path.join(persist_dir, item)
+                
+                # Check if source exists in deployment
+                if os.path.exists(source_dir):
+                    for item in os.listdir(source_dir):
+                        s = os.path.join(source_dir, item)
                         d = os.path.join(tmp_dir, item)
                         if os.path.isdir(s):
                             shutil.copytree(s, d, dirs_exist_ok=True)
                         else:
                             shutil.copy2(s, d)
+                    print("✅ DB migration to /tmp successful.")
                 else:
-                    print(f"⚠️ Warning: Source DB not found at {persist_dir}")
+                    print(f"⚠️ Warning: Source DB not found in deployment at {source_dir}")
             
             persist_dir = tmp_dir
 
