@@ -56,3 +56,14 @@ async def supported_funds_endpoint():
 async def health_check():
     """Simple health check endpoint."""
     return {"status": "healthy", "service": "Mutual Fund RAG Chatbot"}
+
+@app.get("/health/debug")
+async def health_debug():
+    """Debug info on data loading."""
+    return {
+        "status": "online",
+        "fund_count": chatbot.retriever.count,
+        "data_dir": chatbot.retriever.raw_data_dir,
+        "abs_data_dir": os.path.abspath(chatbot.retriever.raw_data_dir),
+        "dir_exists": os.path.exists(chatbot.retriever.raw_data_dir)
+    }
