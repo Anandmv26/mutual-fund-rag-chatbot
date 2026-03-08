@@ -2,7 +2,7 @@
 
 WealthWise AI is a high-speed, Retrieval-Augmented Generation (RAG) chatbot designed to answer plain-English questions about specific mutual funds. Built with a focus on accuracy and speed, it extracts live data, builds an in-memory vector index, and leverages Groq's Llama-3 model to provide grounded, hallucination-free answers.
 
-![WealthWise AI](https://mutual-fund-rag-chatbot-eta.vercel.app/og-image.png) <!-- Replace with an actual screenshot if you have one -->
+[WealthWise AI](https://mutual-fund-rag-chatbot-eta.vercel.app/og-image.png) <!-- Replace with an actual screenshot if you have one -->
 
 🌐 **Live Demo:** [https://mutual-fund-rag-chatbot-eta.vercel.app/](https://mutual-fund-rag-chatbot-eta.vercel.app/)
 
