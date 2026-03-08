@@ -97,45 +97,52 @@ class Retriever:
         self.embeddings = np.array(list(self.model.embed(texts)))
 
     def search(self, query: str, top_k: int = 3) -> List[Dict[str, Any]]:
-        """Find most similar documents in RAM using Cosine Similarity."""
-        if np is None or self.embeddings is None or not self.corpus or not self.model:
-            return []
-
-        # Vectorize query
-        try:
-            query_vec = np.array(list(self.model.embed([query])))[0]
-            
-            # Compute Cosine Similarities (Dot product of normalized vectors)
-            norm_corpus = np.linalg.norm(self.embeddings, axis=1)
-            norm_query = np.linalg.norm(query_vec)
-            
-            # Avoid division by zero
-            if norm_query == 0: return []
-            
-            similarities = np.dot(self.embeddings, query_vec) / (norm_corpus * norm_query)
-        except Exception as e:
-            print(f"[ERROR] Embedding/Similarity failed: {e}")
-            return []
-
-        # Get top indices
-        top_indices = np.argsort(similarities)[::-1][:top_k]
-        
+        """Find most similar documents. Fallback to Keyword Search if ML fails."""
         results = []
-        for idx in top_indices:
-            score = float(similarities[idx])
-            # Relevance floor (keep it low for broad matching, but discard garbage)
-            if score < 0.1: continue 
+        
+        # 1. Try Semantic Search (High Quality)
+        if self.model is not None and self.embeddings is not None and np is not None:
+            try:
+                query_vec = np.array(list(self.model.embed([query])))[0]
+                norm_corpus = np.linalg.norm(self.embeddings, axis=1)
+                norm_query = np.linalg.norm(query_vec)
+                if norm_query > 0:
+                    similarities = np.dot(self.embeddings, query_vec) / (norm_corpus * norm_query)
+                    top_indices = np.argsort(similarities)[::-1][:top_k]
+                    for idx in top_indices:
+                        score = float(similarities[idx])
+                        if score > 0.1:
+                            doc = self.corpus[idx]
+                            results.append({
+                                "id": doc["id"], "text": doc["text"], "metadata": doc["metadata"],
+                                "score": score, "distance": 1.0 - score
+                            })
+                    return results
+            except Exception as e:
+                print(f"[RECOVERY] Semantic search failed, falling back to keywords: {e}")
+
+        # 2. Fallback: Keyword Search (Reliable on Vercel)
+        query_words = set(query.lower().split())
+        keyword_results = []
+        for doc in self.corpus:
+            text = doc["text"].lower()
+            fund_name = doc["metadata"].get("fund_name", "").lower()
             
-            doc = self.corpus[idx]
-            results.append({
-                "id": doc["id"],
-                "text": doc["text"],
-                "metadata": doc["metadata"],
-                "score": score,
-                "distance": 1.0 - score  # For compatibility with Phase 3
-            })
+            # High weight for fund name matches
+            name_score = 0.5 if any(word in fund_name for word in query_words) else 0.0
+            # Basic word overlap
+            overlap = len(query_words.intersection(set(text.split()))) / max(1, len(query_words))
             
-        return results
+            score = name_score + (overlap * 0.5)
+            if score > 0:
+                keyword_results.append({
+                    "id": doc["id"], "text": doc["text"], "metadata": doc["metadata"],
+                    "score": score, "distance": 1.0 - score
+                })
+        
+        # Sort by score descending
+        keyword_results.sort(key=lambda x: x["score"], reverse=True)
+        return keyword_results[:top_k]
 
     @property
     def count(self) -> int:
