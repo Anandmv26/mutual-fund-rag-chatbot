@@ -60,10 +60,13 @@ async def health_check():
 @app.get("/health/debug")
 async def health_debug():
     """Debug info on data loading."""
+    retriever = chatbot.retriever
     return {
         "status": "online",
-        "fund_count": chatbot.retriever.count,
-        "data_dir": chatbot.retriever.raw_data_dir,
-        "abs_data_dir": os.path.abspath(chatbot.retriever.raw_data_dir),
-        "dir_exists": os.path.exists(chatbot.retriever.raw_data_dir)
+        "fund_count": retriever.count,
+        "has_model": retriever.model is not None,
+        "has_embeddings": retriever.embeddings is not None,
+        "data_dir": retriever.raw_data_dir,
+        "abs_data_dir": os.path.abspath(retriever.raw_data_dir),
+        "dir_exists": os.path.exists(retriever.raw_data_dir)
     }
