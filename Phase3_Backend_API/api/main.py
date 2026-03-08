@@ -68,6 +68,7 @@ async def health_debug():
         "status": "online",
         "fund_count": retriever.count,
         "import_error": IMPORT_ERROR,
+        "init_error": retriever.init_error,
         "has_model": retriever.model is not None,
         "has_embeddings": retriever.embeddings is not None,
         "data_dir": retriever.raw_data_dir,

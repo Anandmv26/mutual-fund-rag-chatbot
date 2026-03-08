@@ -33,6 +33,7 @@ class Retriever:
         self.corpus: List[Dict[str, Any]] = []
         self.embeddings = None
         self.model = None
+        self.init_error = None
         
         # Load documents from JSON files
         self._load_documents()
@@ -47,7 +48,10 @@ class Retriever:
                 )
                 self._generate_embeddings()
             except Exception as e:
+                self.init_error = f"Model Init Error: {str(e)}"
                 print(f"[ERROR] Failed to load FastEmbed: {e}")
+        else:
+            self.init_error = "TextEmbedding class is None (Import failed but no error caught)"
 
     def _load_documents(self):
         """Read all JSON files and format them for search."""
