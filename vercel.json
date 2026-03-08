@@ -7,7 +7,7 @@
         },
         {
             "source": "/(.*)",
-            "destination": "/Phase4_Frontend/frontend/dist/$1"
+            "destination": "/public/$1"
         }
     ],
     "functions": {
