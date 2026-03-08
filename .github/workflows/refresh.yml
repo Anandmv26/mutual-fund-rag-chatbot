@@ -1,4 +1,4 @@
-name: "Daily Mutual Fund Scraper & Re-indexing"
+name: "Daily Mutual Fund Scraper"
 
 on:
   schedule:
@@ -21,18 +21,16 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          pip install playwright chromadb sentence-transformers
+          pip install -r scraper_requirements.txt
+          pip install playwright
           playwright install chromium --with-deps
 
-      - name: Scrape, Process, and Embed
+      - name: Scrape and Process
         run: |
           python Phase1_Scraping/ingestion/scraper.py
           python Phase1_Scraping/ingestion/processor.py
-          python Phase1_Scraping/ingestion/embedder.py
         env:
           PYTHONPATH: ${{ github.workspace }}
-          DATABASE_PATH: data/chroma
           RAW_DATA_PATH: data/raw
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
@@ -40,6 +38,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add data/raw/*.json data/chroma/*
+          git add data/raw/*.json
           git commit -m "Automated Data Refresh: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push origin main
