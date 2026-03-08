@@ -7,9 +7,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "Phase3_Backend
 
 # Vercel-Specific: Adjust root path and data path before importing the app
 if os.environ.get("VERCEL"):
+    # Redirect all library caches/lockfiles to /tmp (the only writable directory)
+    os.environ["HOME"] = "/tmp"
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     os.environ["RAW_DATA_PATH"] = os.path.join(root_dir, "data", "raw")
-    print(f"[DEBUG] Vercel RAW_DATA_PATH set to: {os.environ['RAW_DATA_PATH']}")
+    print(f"[DEBUG] Vercel HOME set to /tmp, RAW_DATA_PATH set to: {os.environ['RAW_DATA_PATH']}")
 
 from main import app
 
