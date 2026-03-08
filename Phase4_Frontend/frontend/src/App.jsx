@@ -41,7 +41,9 @@ export default function App() {
     }
 
     useEffect(() => {
-        scrollToBottom()
+        if (messages.length > 1) {
+            scrollToBottom()
+        }
     }, [messages])
 
     // Initial load - We no longer fetch suggestions/funds from backend 
