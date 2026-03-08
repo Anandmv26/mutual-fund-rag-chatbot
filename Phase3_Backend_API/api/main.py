@@ -6,8 +6,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # Relative imports to Phase 3 core and models
 sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "Phase2_Embedding_Retrieval", "search"))
+
 from models import ChatRequest, ChatResponse, SuggestionResponse, SupportedFundsResponse  # noqa: E402
 from core import Phase3Chatbot, get_trending_suggestions, SUPPORTED_FUNDS  # noqa: E402
+from retriever import IMPORT_ERROR # noqa: E402
 
 app = FastAPI(
     title="Mutual Fund RAG Chatbot API",
@@ -64,6 +67,7 @@ async def health_debug():
     return {
         "status": "online",
         "fund_count": retriever.count,
+        "import_error": IMPORT_ERROR,
         "has_model": retriever.model is not None,
         "has_embeddings": retriever.embeddings is not None,
         "data_dir": retriever.raw_data_dir,

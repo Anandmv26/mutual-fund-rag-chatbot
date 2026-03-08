@@ -4,11 +4,17 @@ import json
 import glob
 from typing import List, Dict, Any, Optional
 
+IMPORT_ERROR = None
 try:
     import numpy as np
     from fastembed import TextEmbedding
-except ImportError:
+except ImportError as e:
+    IMPORT_ERROR = str(e)
     # Fail gracefully locally if libs are missing
+    np = None
+    TextEmbedding = None
+except Exception as e:
+    IMPORT_ERROR = f"Unexpected error: {str(e)}"
     np = None
     TextEmbedding = None
 
