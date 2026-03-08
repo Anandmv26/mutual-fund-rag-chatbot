@@ -3,5 +3,5 @@ uvicorn[standard]
 pydantic
 groq
 python-dotenv
-chromadb
 fastembed
+numpy
