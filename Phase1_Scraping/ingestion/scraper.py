@@ -38,15 +38,18 @@ async def scrape_fund(browser, url):
     try:
         print(f"  → Scraping: {url.split('/')[-1]}")
         await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        await asyncio.sleep(6)
 
-        # ---------- HEADER SECTION ----------
-        # 1. Fund Name
-        fund_name = await page.evaluate("""() => {
-            const h1 = document.querySelector('h1');
-            return h1 ? h1.innerText.trim() : 'N/A';
-        }""")
-        
+        # Wait for Cloudflare/Bot protection to pass
+        fund_name = 'N/A'
+        for _ in range(15):
+            await asyncio.sleep(2)
+            fund_name = await page.evaluate("""() => {
+                const h1 = document.querySelector('h1');
+                return h1 ? h1.innerText.trim() : 'N/A';
+            }""")
+            if fund_name != 'N/A' and fund_name.lower() != 'www.indmoney.com':
+                break
+
         if fund_name == 'N/A' or fund_name.lower() == 'www.indmoney.com':
             print(f"  ❌ Blocked or invalid page: {fund_name}")
             return None
