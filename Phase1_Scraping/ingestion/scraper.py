@@ -27,10 +27,13 @@ RAW_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
 
 
+from playwright_stealth import stealth_async
+
 async def scrape_fund(browser, url):
     """Scrape a single fund page and return a clean dictionary."""
     context = await browser.new_context(user_agent=USER_AGENT)
     page = await context.new_page()
+    await stealth_async(page)
 
     try:
         print(f"  → Scraping: {url.split('/')[-1]}")
@@ -43,6 +46,10 @@ async def scrape_fund(browser, url):
             const h1 = document.querySelector('h1');
             return h1 ? h1.innerText.trim() : 'N/A';
         }""")
+        
+        if fund_name == 'N/A' or fund_name.lower() == 'www.indmoney.com':
+            print(f"  ❌ Blocked or invalid page: {fund_name}")
+            return None
 
         # 2. Fund House (AMC)
         fund_house = await page.evaluate("""() => {
