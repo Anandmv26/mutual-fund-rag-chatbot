@@ -9,6 +9,8 @@ on:
 jobs:
   scrape-and-update:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -40,4 +42,5 @@ jobs:
           git config --global user.email "action@github.com"
           git add data/raw/*.json
           git commit -m "Automated Data Refresh: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git pull --rebase origin main
           git push origin main
