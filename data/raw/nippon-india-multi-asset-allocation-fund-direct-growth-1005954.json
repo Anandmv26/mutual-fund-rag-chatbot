@@ -3,13 +3,13 @@
     "fund_house": "Nippon Mutual Fund",
     "fund_category": "Hybrid",
     "sub_category": "Multi Asset Allocation",
-    "fund_manager": "Kinjal Desai, Ashutosh Bhargava, Vikram Dhawan, Sushil Budhia, Vinay Sharma",
-    "nav": "₹25.35",
-    "returns_1y": "23.51%",
-    "returns_3y": "22.4%",
-    "returns_5y": "17.14%",
+    "fund_manager": "Ashutosh Bhargava, Kinjal Desai, Vinay Sharma, Vikram Dhawan, Sushil Budhia",
+    "nav": "₹24.98",
+    "returns_1y": "18.56%",
+    "returns_3y": "21.77%",
+    "returns_5y": "17.15%",
     "benchmark": "null",
-    "benchmark_comparison": "1Y: 4.23%, 3Y: 10.72%, 5Y: 8.63%",
+    "benchmark_comparison": "1Y: 1.61%, 3Y: 10.62%, 5Y: 8.95%",
     "alpha": "--",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "2.12",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/nippon-india-multi-asset-allocation-fund-direct-growth-1005954",
-    "scraped_at": "2026-03-15T04:37:39.786544"
+    "scraped_at": "2026-03-21T04:11:36.935094"
 }
