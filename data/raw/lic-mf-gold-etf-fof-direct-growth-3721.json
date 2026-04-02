@@ -6,8 +6,8 @@
     "fund_manager": "Sumit Bhatnagar",
     "nav": "₹39.55",
     "returns_1y": "59.81%",
-    "returns_3y": "33.46%",
-    "returns_5y": "25.4%",
+    "returns_3y": "32.97%",
+    "returns_5y": "25.53%",
     "benchmark": "Domestic Price of Gold",
     "benchmark_comparison": "N/A",
     "alpha": "--",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹200",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/lic-mf-gold-etf-fof-direct-growth-3721",
-    "scraped_at": "2026-03-31T04:39:27.566366"
+    "scraped_at": "2026-04-02T04:33:41.225303"
 }
