@@ -3,13 +3,13 @@
     "fund_house": "Mahindra Mutual Fund",
     "fund_category": "Hybrid",
     "sub_category": "Aggressive Allocation",
-    "fund_manager": "Rahul Pal, Kirti Dalvi, Amit Garg, Fatema Pacha",
-    "nav": "₹29.61",
-    "returns_1y": "7.42%",
-    "returns_3y": "16.72%",
-    "returns_5y": "14.98%",
+    "fund_manager": "Amit Garg, Rahul Pal, Kirti Dalvi, Fatema Pacha",
+    "nav": "₹29.89",
+    "returns_1y": "6.02%",
+    "returns_3y": "17.05%",
+    "returns_5y": "15.79%",
     "benchmark": "CRISIL Hybrid 35+65 - Agg TR INR",
-    "benchmark_comparison": "1Y: 7.66%, 3Y: 12.45%, 5Y: 10.78%",
+    "benchmark_comparison": "1Y: 4.69%, 3Y: 12.4%, 5Y: 11.29%",
     "alpha": "3.69",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "0.76",
@@ -19,5 +19,5 @@
     "min_investment": "₹1,000/₹500",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/mahindra-manulife-aggressive-hybrid-fund-direct-growth-1004900",
-    "scraped_at": "2026-04-11T04:29:02.472572"
+    "scraped_at": "2026-04-16T04:58:45.421384"
 }
