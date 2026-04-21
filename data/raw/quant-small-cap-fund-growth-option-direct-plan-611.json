@@ -3,11 +3,11 @@
     "fund_house": "Quant Mutual Fund",
     "fund_category": "Equity",
     "sub_category": "Small-Cap",
-    "fund_manager": "Sanjeev Sharma, Ankit A",
-    "nav": "₹269.25",
-    "returns_1y": "6%",
-    "returns_3y": "20.94%",
-    "returns_5y": "23.88%",
+    "fund_manager": "Ayusha Kumbhat, Sandeep Tandon, Sanjeev Sharma, Ankit A",
+    "nav": "₹271.21",
+    "returns_1y": "6.06%",
+    "returns_3y": "21.19%",
+    "returns_5y": "24.02%",
     "benchmark": "Nifty Smallcap 250 TR INR",
     "benchmark_comparison": "N/A",
     "alpha": "0.97",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/quant-small-cap-fund-growth-option-direct-plan-611",
-    "scraped_at": "2026-04-17T04:53:11.806454"
+    "scraped_at": "2026-04-21T04:52:42.811392"
 }
