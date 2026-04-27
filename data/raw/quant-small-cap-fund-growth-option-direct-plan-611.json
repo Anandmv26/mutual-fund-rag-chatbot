@@ -3,7 +3,7 @@
     "fund_house": "Quant Mutual Fund",
     "fund_category": "Equity",
     "sub_category": "Small-Cap",
-    "fund_manager": "Ayusha Kumbhat, Sandeep Tandon, Yug Tibrewal, Sanjeev Sharma, Ankit A",
+    "fund_manager": "Sanjeev Sharma, Yug Tibrewal, Ankit A",
     "nav": "₹273.11",
     "returns_1y": "4.44%",
     "returns_3y": "21.25%",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/quant-small-cap-fund-growth-option-direct-plan-611",
-    "scraped_at": "2026-04-26T05:16:11.293049"
+    "scraped_at": "2026-04-27T05:29:23.878679"
 }
