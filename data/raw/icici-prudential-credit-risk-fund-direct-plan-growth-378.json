@@ -9,7 +9,7 @@
     "returns_3y": "8.72%",
     "returns_5y": "7.9%",
     "benchmark": "CRISIL Credit Risk Debt TR INR",
-    "benchmark_comparison": "1Y: 7%, 3Y: 7.76%, 5Y: 9%",
+    "benchmark_comparison": "1Y: 6.8%, 3Y: 7.71%, 5Y: 8.97%",
     "alpha": "0.94",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "2.03",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/icici-prudential-credit-risk-fund-direct-plan-growth-378",
-    "scraped_at": "2026-05-16T05:32:24.176581"
+    "scraped_at": "2026-05-18T06:20:47.390344"
 }
