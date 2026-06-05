@@ -4,13 +4,13 @@
     "fund_category": "Debt",
     "sub_category": "Credit Risk",
     "fund_manager": "Akhil Kakkar, Manish Banthia",
-    "nav": "₹37.51",
-    "returns_1y": "7.45%",
-    "returns_3y": "8.74%",
-    "returns_5y": "7.8%",
+    "nav": "₹37.57",
+    "returns_1y": "7.54%",
+    "returns_3y": "8.77%",
+    "returns_5y": "7.81%",
     "benchmark": "CRISIL Credit Risk Debt TR INR",
-    "benchmark_comparison": "1Y: 6.59%, 3Y: 7.7%, 5Y: 8.95%",
-    "alpha": "0.97",
+    "benchmark_comparison": "1Y: 6.61%, 3Y: 7.72%, 5Y: 8.95%",
+    "alpha": "0.95",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "2.01",
     "expense_ratio": "0.62%",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/icici-prudential-credit-risk-fund-direct-plan-growth-378",
-    "scraped_at": "2026-06-01T07:04:31.849984"
+    "scraped_at": "2026-06-05T06:29:26.992196"
 }
