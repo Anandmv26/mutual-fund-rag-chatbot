@@ -4,10 +4,10 @@
     "fund_category": "Hybrid",
     "sub_category": "Sector - Precious Metals",
     "fund_manager": "Sumit Bhatnagar",
-    "nav": "₹40.47",
-    "returns_1y": "47.01%",
-    "returns_3y": "34.02%",
-    "returns_5y": "24.74%",
+    "nav": "₹39.66",
+    "returns_1y": "45.14%",
+    "returns_3y": "33.51%",
+    "returns_5y": "24.24%",
     "benchmark": "Domestic Price of Gold",
     "benchmark_comparison": "N/A",
     "alpha": "--",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹200",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/lic-mf-gold-etf-fof-direct-growth-3721",
-    "scraped_at": "2026-06-19T07:11:50.458952"
+    "scraped_at": "2026-06-21T06:55:15.867804"
 }
