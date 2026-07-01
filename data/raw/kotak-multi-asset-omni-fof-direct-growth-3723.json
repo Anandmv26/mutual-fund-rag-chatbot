@@ -4,12 +4,12 @@
     "fund_category": "Hybrid",
     "sub_category": "Fund Of Funds",
     "fund_manager": "Abhishek Bisen, Devender Singhal",
-    "nav": "₹277.85",
-    "returns_1y": "11.16%",
-    "returns_3y": "17.43%",
-    "returns_5y": "16.61%",
+    "nav": "₹274.17",
+    "returns_1y": "7.91%",
+    "returns_3y": "16.64%",
+    "returns_5y": "16.09%",
     "benchmark": "Nifty 50 TR INR",
-    "benchmark_comparison": "1Y: 2.84%, 3Y: 10.43%, 5Y: 9.15%",
+    "benchmark_comparison": "1Y: 2.01%, 3Y: 10.18%, 5Y: 9.2%",
     "alpha": "--",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "1.00",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/kotak-multi-asset-omni-fof-direct-growth-3723",
-    "scraped_at": "2026-06-24T06:12:52.714103"
+    "scraped_at": "2026-07-01T06:40:15.203026"
 }
