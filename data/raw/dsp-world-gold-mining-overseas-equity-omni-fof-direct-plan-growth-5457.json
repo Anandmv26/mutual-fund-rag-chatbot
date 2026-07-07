@@ -4,12 +4,12 @@
     "fund_category": "Equity",
     "sub_category": "Global - Other",
     "fund_manager": "Kaivalya Nadkarni",
-    "nav": "₹53.58",
-    "returns_1y": "65.86%",
-    "returns_3y": "44.85%",
-    "returns_5y": "23.41%",
+    "nav": "₹56.37",
+    "returns_1y": "71.17%",
+    "returns_3y": "47.42%",
+    "returns_5y": "24.21%",
     "benchmark": "FTSE Gold Mines TR USD",
-    "benchmark_comparison": "1Y: -2.84%, 3Y: 10.29%, 5Y: 10.41%",
+    "benchmark_comparison": "1Y: -1.19%, 3Y: 10.26%, 5Y: 10.55%",
     "alpha": "1.18",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "1.10",
@@ -19,5 +19,5 @@
     "min_investment": "--/--",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/dsp-world-gold-mining-overseas-equity-omni-fof-direct-plan-growth-5457",
-    "scraped_at": "2026-07-02T06:03:05.526991"
+    "scraped_at": "2026-07-07T06:12:31.381153"
 }
