@@ -4,10 +4,10 @@
     "fund_category": "Equity",
     "sub_category": "Equity - Other",
     "fund_manager": "Ajaykumar Solanki, Venus Ahuja, Nishit Patel, Ashwini Shinde",
-    "nav": "₹34.71",
-    "returns_1y": "7.78%",
-    "returns_3y": "20.68%",
-    "returns_5y": "24.21%",
+    "nav": "₹34.51",
+    "returns_1y": "7.1%",
+    "returns_3y": "19.94%",
+    "returns_5y": "23.81%",
     "benchmark": "BSE Bharat 22 TR INR",
     "benchmark_comparison": "N/A",
     "alpha": "--",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/icici-prudential-bharat-22-fof-direct-growth-5380",
-    "scraped_at": "2026-07-06T06:41:13.464570"
+    "scraped_at": "2026-07-08T05:24:58.235661"
 }
