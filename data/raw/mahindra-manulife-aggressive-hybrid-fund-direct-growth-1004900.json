@@ -9,7 +9,7 @@
     "returns_3y": "14.39%",
     "returns_5y": "13.82%",
     "benchmark": "CRISIL Hybrid 35+65 - Agg TR INR",
-    "benchmark_comparison": "1Y: 0.7%, 3Y: 10.98%, 5Y: 10.16%",
+    "benchmark_comparison": "1Y: 2.17%, 3Y: 11.13%, 5Y: 10.32%",
     "alpha": "3.04",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "0.66",
@@ -19,5 +19,5 @@
     "min_investment": "₹1,000/₹500",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/mahindra-manulife-aggressive-hybrid-fund-direct-growth-1004900",
-    "scraped_at": "2026-07-12T05:35:20.462482"
+    "scraped_at": "2026-07-13T05:45:38.030837"
 }
