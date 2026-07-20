@@ -9,7 +9,7 @@
     "returns_3y": "14.48%",
     "returns_5y": "14.77%",
     "benchmark": "CRISIL Hybrid 35+65 - Agg TR INR",
-    "benchmark_comparison": "1Y: 2.07%, 3Y: 10.72%, 5Y: 10.04%",
+    "benchmark_comparison": "1Y: 2.04%, 3Y: 10.57%, 5Y: 10.15%",
     "alpha": "3.80",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "0.73",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/edelweiss-aggressive-hybrid-direct-plan-growth-option-4633",
-    "scraped_at": "2026-07-19T05:28:36.002381"
+    "scraped_at": "2026-07-20T05:46:31.094440"
 }
