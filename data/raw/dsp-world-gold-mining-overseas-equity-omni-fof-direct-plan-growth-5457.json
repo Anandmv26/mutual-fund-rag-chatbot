@@ -9,7 +9,7 @@
     "returns_3y": "39.97%",
     "returns_5y": "21.69%",
     "benchmark": "FTSE Gold Mines TR USD",
-    "benchmark_comparison": "1Y: -0.13%, 3Y: 9.74%, 5Y: 10.25%",
+    "benchmark_comparison": "1Y: -0.21%, 3Y: 9.34%, 5Y: 10.58%",
     "alpha": "1.18",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "1.10",
@@ -19,5 +19,5 @@
     "min_investment": "--/--",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/dsp-world-gold-mining-overseas-equity-omni-fof-direct-plan-growth-5457",
-    "scraped_at": "2026-07-19T05:25:24.137985"
+    "scraped_at": "2026-07-21T05:23:46.697196"
 }
