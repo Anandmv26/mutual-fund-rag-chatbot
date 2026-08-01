@@ -4,13 +4,13 @@
     "fund_category": "Equity",
     "sub_category": "Small-Cap",
     "fund_manager": "Ayusha Kumbhat, Yug Tibrewal, Sandeep Tandon, Ankit A",
-    "nav": "₹306.24",
-    "returns_1y": "7.98%",
-    "returns_3y": "19.35%",
-    "returns_5y": "19.07%",
+    "nav": "₹308.96",
+    "returns_1y": "10.8%",
+    "returns_3y": "18.53%",
+    "returns_5y": "18.63%",
     "benchmark": "Nifty Smallcap 250 TR INR",
     "benchmark_comparison": "N/A",
-    "alpha": "3.07",
+    "alpha": "2.25",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "0.76",
     "expense_ratio": "0.81%",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/quant-small-cap-fund-growth-option-direct-plan-611",
-    "scraped_at": "2026-07-26T05:36:08.624772"
+    "scraped_at": "2026-08-01T05:32:49.871966"
 }
