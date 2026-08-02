@@ -12,12 +12,12 @@
     "benchmark_comparison": "N/A",
     "alpha": "2.25",
     "risk_rating": "Very High Risk",
-    "sharpe_ratio": "0.76",
+    "sharpe_ratio": "0.63",
     "expense_ratio": "0.81%",
     "aum": "₹33739 Cr",
     "exit_load": "1.0%",
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/quant-small-cap-fund-growth-option-direct-plan-611",
-    "scraped_at": "2026-08-01T05:32:49.871966"
+    "scraped_at": "2026-08-02T05:32:13.940016"
 }
