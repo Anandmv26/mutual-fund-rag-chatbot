@@ -3,13 +3,13 @@
     "fund_house": "Edelweiss Mutual Fund",
     "fund_category": "Hybrid",
     "sub_category": "Aggressive Allocation",
-    "fund_manager": "Bharat Lahoti, Bhavesh Jain, Rahul Dedhia, Kedar Karnik",
-    "nav": "₹77.05",
-    "returns_1y": "6.34%",
-    "returns_3y": "15.18%",
-    "returns_5y": "14.75%",
+    "fund_manager": "Bhavesh Jain, Kedar Karnik, Bharat Lahoti, Rahul Dedhia",
+    "nav": "₹76.89",
+    "returns_1y": "5.18%",
+    "returns_3y": "15.07%",
+    "returns_5y": "14.6%",
     "benchmark": "CRISIL Hybrid 35+65 - Agg TR INR",
-    "benchmark_comparison": "1Y: 4.85%, 3Y: 11.09%, 5Y: 9.82%",
+    "benchmark_comparison": "1Y: 3.45%, 3Y: 11.07%, 5Y: 9.79%",
     "alpha": "3.58",
     "risk_rating": "Very High Risk",
     "sharpe_ratio": "0.69",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/edelweiss-aggressive-hybrid-direct-plan-growth-option-4633",
-    "scraped_at": "2026-08-18T03:02:00.590502"
+    "scraped_at": "2026-08-20T03:02:49.616662"
 }
