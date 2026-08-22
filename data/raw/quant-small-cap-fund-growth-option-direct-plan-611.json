@@ -3,11 +3,11 @@
     "fund_house": "Quant Mutual Fund",
     "fund_category": "Equity",
     "sub_category": "Small-Cap",
-    "fund_manager": "Varun Pattani, Sameer Kate, Ankit A",
-    "nav": "₹314.25",
-    "returns_1y": "14.48%",
-    "returns_3y": "18.95%",
-    "returns_5y": "20.57%",
+    "fund_manager": "Ankit A",
+    "nav": "₹317.10",
+    "returns_1y": "13.35%",
+    "returns_3y": "18.97%",
+    "returns_5y": "21.18%",
     "benchmark": "Nifty Smallcap 250 TR INR",
     "benchmark_comparison": "N/A",
     "alpha": "2.25",
@@ -19,5 +19,5 @@
     "min_investment": "₹5,000/₹1,000",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/quant-small-cap-fund-growth-option-direct-plan-611",
-    "scraped_at": "2026-08-20T03:00:52.466470"
+    "scraped_at": "2026-08-22T02:58:16.933539"
 }
