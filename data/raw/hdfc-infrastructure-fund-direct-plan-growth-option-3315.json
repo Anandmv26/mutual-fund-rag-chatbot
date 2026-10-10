@@ -3,11 +3,11 @@
     "fund_house": "HDFC Mutual Fund",
     "fund_category": "Equity",
     "sub_category": "Equity - Infrastructure",
-    "fund_manager": "Ashish Shah, Dhruv Muchhal",
-    "nav": "₹50.84",
-    "returns_1y": "-4.08%",
-    "returns_3y": "13.14%",
-    "returns_5y": "18.16%",
+    "fund_manager": "Dhruv Muchhal, Ashish Shah",
+    "nav": "₹49.53",
+    "returns_1y": "-6.72%",
+    "returns_3y": "12.62%",
+    "returns_5y": "17.25%",
     "benchmark": "BSE India Infrasturcture TRI TR INR",
     "benchmark_comparison": "N/A",
     "alpha": "1.14",
@@ -19,5 +19,5 @@
     "min_investment": "₹100/₹100",
     "lock_in_period": "No Lock-in",
     "source_url": "https://www.indmoney.com/mutual-funds/hdfc-infrastructure-fund-direct-plan-growth-option-3315",
-    "scraped_at": "2026-10-07T08:20:36.240553"
+    "scraped_at": "2026-10-10T08:15:42.441582"
 }
